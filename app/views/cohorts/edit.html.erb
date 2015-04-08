@@ -1,18 +1,4 @@
 <h1>Cohorts#edit</h1>
 <p>Find me in app/views/cohorts/edit.html.erb</p>
 
-<% if @cohort.errors.any? %>
-  <ul>
-    <% @cohort.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-  </ul>
-<% end %>
-
-<%= form_for(@cohort) do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :details %>
-  <%= f.text_field :details %>
-  <%= f.submit %>
-<% end %>
+<%= render "cohorts/form" %>
