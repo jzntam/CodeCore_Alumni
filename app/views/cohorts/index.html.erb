@@ -4,10 +4,23 @@
 <%= link_to "New Group", new_cohort_path %>
 <br>
 <div>
-  <% @cohorts.each do |cohort| %>
-    <%= cohort.title %>
-    <%= cohort.details %>
-    <%= link_to "Edit", edit_cohort_path(cohort) %>
-    <%= link_to "Delete", cohort_path(cohort), method: :delete %>
-  <% end %>
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <td><h4>BootCamp</h4></td>
+        <td><h4>Details</h4></td>
+        <td><h4>Action</h4></td>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cohorts.each do |cohort| %>
+        <tr>
+          <td><h4><%= link_to cohort.title, cohort_path(cohort) %></h4></td>
+          <td><%= cohort.details %></td>
+          <td><%= link_to "Edit", edit_cohort_path(cohort) %></td>
+          <td><%= link_to "Delete", cohort_path(cohort), method: :delete %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 </div>
