@@ -17,8 +17,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'bcrypt', '~> 3.1.7'
 gem "rspec-rails"
 gem "faker"
+gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '~> 5.0'
-gem "bootstrap-sass"
 gem "quiet_assets"
 
 group :development do
