@@ -1,2 +1,46 @@
 <h1>Contacts#edit</h1>
 <p>Find me in app/views/contacts/edit.html.erb</p>
+
+<%= form_for @contact, url: cohort_contact_path(@cohort, @contact), method: :patch do |f| %>
+  <% if @contact.errors.any? %>
+    <div class="error_messages">
+      <h2>Form is invalid</h2>
+      <ul>
+        <% @contact.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="control-group">
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+  </div>
+  <div class="control-group">
+    <%= f.label :last_name %>
+    <%= f.text_field :last_name %>
+  </div>
+  <div class="control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div class="control-group">
+    <%= f.label :phone %>
+    <%= f.text_field :phone %>
+  </div>
+  <div class="control-group">
+    <%= f.label :company %>
+    <%= f.text_field :company %>
+  </div>
+  <div class="control-group">
+    <%= f.label :website %><br>
+    <%= f.text_field :website %>
+  </div>
+  <div class="control-group">
+    <%= f.label :other %><br>
+    <%= f.text_area :other %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

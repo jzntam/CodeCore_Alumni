@@ -25,12 +25,28 @@ class ContactsController < ApplicationController
   end
 
   def edit
+    @contact = Contact.find(params[:id])
+    @cohort = Cohort.find(params[:cohort_id])
   end
 
   def update
+    @contact = Contact.find(params[:id])
+    if @contact.update(contact_params)
+      redirect_to cohort_path(@contact.cohort_id), notice: "Contact Updated!"
+    else
+      flash[:alert] = "Could not update contact, please try again."
+      redirect_to cohort_path(@contact.cohort_id)
+    end
   end
 
   def destroy
+    @contact = Contact.find(params[:id])
+    if @contact.destroy
+      redirect_to cohort_path(@contact.cohort_id), notice: "Contact Deleted!"
+    else
+      flash[:alert] = "Could not delete contact, please try again."
+      redirect_to cohort_path(@contact.cohort_id)
+    end
   end
 
   private
