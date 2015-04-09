@@ -1,8 +1,11 @@
 Rails.application.routes.draw do
-  
+
   resources :sessions
   resources :users
-  resources :cohorts
+  
+  resources :cohorts do
+    resources :contacts
+  end
 
   root 'cohorts#index'
 
