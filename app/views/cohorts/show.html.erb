@@ -1,2 +1,15 @@
 <h1>Cohorts#show</h1>
 <p>Find me in app/views/cohorts/show.html.erb</p>
+
+<%= link_to "Create New Contact", new_cohort_contact_path(@cohort) %>
+
+<% @cohort.contacts.each do |contact| %>
+  <div class="bg-info">
+    <p><%= contact.first_name %></p>
+    <p><%= contact.last_name %></p>
+    <p><%= contact.email %></p>
+    <p><%= contact.company %></p>
+    <p><%= contact.website %></p>
+    <p><%= contact.other %></p>
+  </div>
+<% end %>
