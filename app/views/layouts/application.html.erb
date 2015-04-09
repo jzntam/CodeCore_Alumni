@@ -7,49 +7,7 @@
     <%= csrf_meta_tags %>
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-fixed-top">
-      <div class="container">
-        <div class="navbar-header page-scroll">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="#page-top">CCA LOGO</a>
-        </div>
-
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li><a href="#">HOME</a></li>
-            <li><a href="#cohorts">COHORTS</a></li>
-            <li><a href="#alumni">ALUMNI</a></li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">DROPDOWN <span class="caret"></span></a>
-              <ul class="dropdown-menu" role="menu">
-                <li><a href="#">Action</a></li>
-                <li><a href="#">Another action</a></li>
-                <li><a href="#">Something else here</a></li>
-                <li class="divider"></li>
-                <li class="dropdown-header">Nav header</li>
-                <li><a href="#">Separated link</a></li>
-                <li><a href="#">One more separated link</a></li>
-              </ul>
-            </li>
-          </ul>
-          <ul class="nav navbar-nav navbar-right">
-            <% if current_user %>
-              <li><a>Logged in as <%= current_user.email %></a></li>
-              <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
-            <% else %>
-              <li><%= link_to "Sign Up", new_user_path %></li>
-              <li><%= link_to "Log In", new_session_path %></li>
-            <% end %>
-          </ul>
-        </div><!-- /.navbar-collapse -->
-      </div><!-- /.container-fluid -->
-    </nav>
-
+    <%= render 'layouts/nav_bar' %>
     <div style="height:80px"></div>
 
     <div class="container">
