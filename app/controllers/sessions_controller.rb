@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @user = User.find_by_email(params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Logged in!"
+      redirect_to cohorts_path, notice: "Logged in!"
     else
       flash[:alert] = "Incorrect Login Info! Have you Signed Up?"
       render :new
@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to root_path, notice: "Logged Out!"
+    redirect_to cohorts_path, notice: "Logged Out!"
   end
 
 end
