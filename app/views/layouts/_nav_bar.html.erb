@@ -33,10 +33,23 @@
           <li><a>Logged in as <%= current_user.email %></a></li>
           <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
         <% else %>
-          <li><%= link_to "Sign Up", new_user_path %></li>
-          <li><%= link_to "Log In", new_session_path %></li>
+          <li>
+            <!-- Button trigger modal -->
+            <a type="button" data-toggle="modal" data-target="#signUpModal">
+              Sign Up
+            </a>
+          </li>
+          <li>
+            <!-- Button trigger modal -->
+            <a type="button" data-toggle="modal" data-target="#signInModal">
+              Log In
+            </a>
+          </li>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<%= render 'sessions/new' %>
+<%= render 'users/new' %>
