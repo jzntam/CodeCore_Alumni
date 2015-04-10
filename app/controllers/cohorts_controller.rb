@@ -1,6 +1,8 @@
 class CohortsController < ApplicationController
-  before_action :new_user, only: [:index, :show]
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :new_user, only: [:index, :show]
+  before_action :find_cohort, only: [:show]
+  
   def index
     @cohorts = Cohort.all
   end
@@ -58,7 +60,7 @@ class CohortsController < ApplicationController
     @user = User.new
   end
 
-  def find_user
-    @user = User.find params[:user_id]
+  def find_cohort
+    @cohort = Cohort.find params[:id]
   end
 end
