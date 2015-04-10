@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   resources :sessions
   resources :users
   
-  resources :cohorts, only: [:index, :show] do
+  resources :cohorts do
     resources :contacts
   end
 
