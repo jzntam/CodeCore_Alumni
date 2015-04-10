@@ -90,23 +90,59 @@ RSpec.describe CohortsController, type: :controller do
 
   describe "GET #edit" do
     it "returns http success" do
-      get :edit
+      login(user)
+      get :edit, id: cohort.id
       expect(response).to have_http_status(:success)
+    end
+
+    it "renders the edit page" do
+      login(user)
+      get :edit, id: cohort.id
+      expect(response).to render_template(:edit)
+    end
+
+    it "redirects when user not signed in" do 
+      get :edit, id: cohort.id
+      expect(response).to have_http_status(:redirect)
     end
   end
 
   describe "GET #update" do
-    it "returns http success" do
-      get :update
-      expect(response).to have_http_status(:success)
+    before {patch :update, id: cohort.id, cohort: {title: "edited title"}}
+    it "returns http redirect" do # when cohort is updated, it redirects to root path
+      login(user)
+      expect(response).to have_http_status(:redirect)
+    end
+
+    it "redirects to cohort root path" do
+      login(user)
+      expect(response).to redirect_to( root_path )
     end
   end
 
   describe "GET #delete" do
-    it "returns http success" do
-      get :delete
-      expect(response).to have_http_status(:success)
+    def valid_request
+      login(user)
+      delete :destroy, id: cohort.id
     end
+    it "returns http redirect" do
+      valid_request
+      expect(response).to have_http_status(:redirect)
+    end
+
+    it "redirects to root path" do
+      valid_request
+      expect(response).to redirect_to( root_path )
+    end
+
+    it "deletes the cohort in the database" do
+      login(user)
+      cohort
+      expect{
+        delete :destroy, id: cohort.id
+      }.to change {Cohort.count}.by(-1)
+    end
+
   end
 
 end
