@@ -28,11 +28,15 @@ group :development do
   gem "pry-rails"
 end
 
+group :test do
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+end
+
 
 group :development, :test do
-  gem 'rspec-rails'
   gem 'faker'
-  gem 'factory_girl_rails'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
   # Access an IRB console on exception pages or by using <%= console %> in views
