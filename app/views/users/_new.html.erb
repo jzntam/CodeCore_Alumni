@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="myModalLabel">Sign Up</h4>
       </div>
       <div class="modal-body">
-        <%= form_for @user do |f| %>
+        <%= form_for (@user || User.new) do |f| %>
           <% if @user.errors.any? %>
             <div class="error_messages">
               <h2>Form is invalid</h2>

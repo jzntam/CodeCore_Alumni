@@ -8,17 +8,17 @@
       <div class="modal-body">
         <h1>Sessions#new</h1>
         <p>Find me in app/views/sessions/new.html.erb</p>
-        <%= form_tag sessions_path do %>
+        <%= form_for (@user || @user = User.new), url: sessions_path, method: :post do |f| %>
           <div class="field">
-            <%= label_tag :email %><br />
-            <%= text_field_tag :email, params[:email] %>
+            <%= f.label :email %><br />
+            <%= f.text_field :email %>
           </div>
           <div class="field">
-            <%= label_tag :password %><br />
-            <%= password_field_tag :password %>
+            <%= f.label :password %><br />
+            <%= f.password_field :password %>
           </div>
           <div class="actions">
-            <%= submit_tag "Log In" %>
+            <%= f.submit "Log In" %>
           </div>
         <% end %>
       </div>
