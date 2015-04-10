@@ -12,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to cohorts_path, notice: "Successfully Registered"
     else
       flash[:alert] = "Error creating account, please try again."
-      render "new"
+      render :new
     end
   end
 

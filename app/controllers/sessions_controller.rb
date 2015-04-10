@@ -4,13 +4,13 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by_email(params[:email])
-    if @user && @user.authenticate(params[:password])
+    @user = User.find_by_email(params[:user][:email])
+    if @user && @user.authenticate(params[:user][:password])
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Logged in!"
     else
       flash[:alert] = "Incorrect Login Info! Have you Signed Up?"
-      render :new
+      redirect_to new_session_path
     end
   end
 
