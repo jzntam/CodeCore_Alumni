@@ -1,4 +1,8 @@
 class CohortsController < ApplicationController
+  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :new_user, only: [:index, :show]
+  before_action :find_cohort, only: [:show]
+  
   def index
     @cohorts = Cohort.all
   end
@@ -50,5 +54,13 @@ class CohortsController < ApplicationController
 
   def cohort_params
     params.require(:cohort).permit(:title, :details)
+  end
+
+  def new_user
+    @user = User.new
+  end
+
+  def find_cohort
+    @cohort = Cohort.find params[:id]
   end
 end
