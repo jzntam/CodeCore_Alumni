@@ -45,11 +45,13 @@
               Log In
             </a>
           </li>
-
-            <%= render 'sessions/new' %>
-            <%= render 'users/new' %>
         <% end %>
       </ul>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
+
+<% if !user_signed_in? %>
+  <%= render 'sessions/new' %>
+  <%= render 'users/new' %>
+<% end %>
