@@ -13,7 +13,7 @@ RSpec.describe CohortsController, type: :controller do
 
     it "returns all cohorts" do
       get :index
-      expect( assigns(:cohorts) ).to eq([cohort, cohort_1])
+      expect( assigns(:cohorts) ).to match_array([cohort_1, cohort])
     end
 
     it "renders the index templaye" do
