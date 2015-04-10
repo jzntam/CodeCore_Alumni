@@ -32,21 +32,59 @@ RSpec.describe CohortsController, type: :controller do
       get :show, id: cohort.id
       expect(response).to render_template(:show)
     end
-
-
   end
 
   describe "GET #new" do
-    it "returns http success" do
-      get :new
-      expect(response).to have_http_status(:success)
+    context "user is not signed in" do
+      it "returns http redirect" do
+        get :new
+        expect(response).to have_http_status(:redirect)
+      end
+    end
+
+    context "user is signed in" do
+      before {login(user)}
+      it "returns http success" do
+        get :new
+        expect(response).to have_http_status(:success)
+      end
+      it "renders a new template" do
+        get :new
+        expect(response).to render_template(:new)
+      end
     end
   end
 
   describe "GET #create" do
-    it "returns http success" do
-      get :create
-      expect(response).to have_http_status(:success)
+    # let(:cohort_valid_request) 
+    context "User is not signed in" do
+      it "returns http redirect" do
+        get :create
+        expect(response).to have_http_status(:redirect)
+      end
+    end
+
+    context "User is signed in and creates a valid request" do
+      def valid_request
+        login(user)
+        post :create, cohort: {title: "Some title", details: "Some detail"}
+      end
+      it "creates a new cohort" do
+        get :create
+        expect{valid_request}.to change {Cohort.count}.by(1)
+      end
+    end
+
+    context "User is signed in and creates an invalid request" do
+      def invalid_request
+        login(user)
+        post :create, cohort: {title: "", details: ""}
+      end
+
+      it "does not create a new cohort" do
+        get :create
+        expect{invalid_request}.to change {Cohort.count}.by(0)
+      end
     end
   end
 
