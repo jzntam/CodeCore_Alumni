@@ -3,95 +3,30 @@
 
 <%= link_to "Create New Contact", new_cohort_contact_path(@cohort) %>
 
-<% @cohort.contacts.each do |contact| %>
-  <div class="bg-info">
-    <p><%= contact.first_name %></p>
-    <p><%= contact.last_name %></p>
-    <p><%= contact.email %></p>
-    <p><%= contact.company %></p>
-    <p><%= contact.website %></p>
-    <p><%= contact.other %></p>
-    <p><%= link_to "Edit", edit_cohort_contact_path(@cohort, contact) %></p>
-    <p><%= link_to "Delete", cohort_contact_path(@cohort, contact), method: :delete %></p>
-  </div>
-<% end %>
 
-<!-- Placeholder Grid, will need to be refactored and placed in a partial within the above .each loop -->
   <section id="profile">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-12 text-center">
-          <h2>Portfolio</h2>
-          <hr class="star-primary">
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-4 profile-item">
-          <a href="#profileModal1" class="profile-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="http://fillmurray.com/300/250" class="img-responsive" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 profile-item">
-          <a href="#profileModal" class="profile-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="http://fillmurray.com/300/250" class="img-responsive" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 profile-item">
-          <a href="#profileModal3" class="profile-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="http://fillmurray.com/300/250" class="img-responsive" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 profile-item">
-          <a href="#profileModal4" class="profile-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="http://fillmurray.com/300/250" class="img-responsive" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 profile-item">
-          <a href="#profileModal5" class="profile-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="http://fillmurray.com/300/250" class="img-responsive" alt="">
-          </a>
-        </div>
-        <div class="col-sm-4 profile-item">
-          <a href="#profileModal6" class="profile-link" data-toggle="modal">
-            <div class="caption">
-              <div class="caption-content">
-                <i class="fa fa-search-plus fa-3x"></i>
-              </div>
-            </div>
-            <img src="http://fillmurray.com/300/250" class="img-responsive" alt="">
-          </a>
-        </div>
+    <div class="row">
+      <div class="col-lg-12 text-center">
+        <h2>Woot Woot</h2>
+        <hr>
       </div>
     </div>
-  </section>
+    <div class="row">
+
+<% @cohort.contacts.each do |contact| %>
+  <div class="col-sm-4 profile-item">
+    <a href="#profileModal_<%= dom_id(contact) %>" class="profile-link" data-toggle="modal">
+      <div class="caption">
+        <div class="caption-content">
+          <i class="fa fa-search-plus fa-3x"></i>
+        </div>
+      </div>
+      <img src="http://fillmurray.com/360/250" class="img-responsive" alt="">
+    </a>
+  </div>
 
   <!-- Profile Modal -->
-  <div class="profile-modal modal fade" id="profileModal1" tabindex="-1" role="dialog" aria-hidden="true">
+  <div id="profileModal_<%= dom_id(contact) %>" class="profile-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-content">
       <div class="close-modal" data-dismiss="modal">
         <div class="lr">
@@ -101,9 +36,9 @@
       </div>
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 col-lg-offset-2">
+          <div class="col-lg-10 col-lg-offset-1">
             <div class="modal-body col-md-12">
-              <h2>Taylor Yoshida Wilson</h2>
+              <h2>Taylor Yoshida Wilson <%= dom_id(contact) %></h2>
               <hr class="star-primary">
               <div class="col-md-4">
                 <img src="http://fillmurray.com/325/400" class="img-responsive img-centered" alt="">
@@ -112,7 +47,7 @@
                 <table class="up-close">
                   <tr>
                     <td><h4>Name:</h4></td>
-                    <td>Taylor Yoshida Wilson</td>
+                    <td><%= contact.full_name %></td>
                   </tr>
                   <tr>
                     <td><h4>Company:</h4></td>
@@ -129,7 +64,7 @@
                   <tr>
                     <td><h4>Profile:</h4></td>
                     <td>
-                      Vegan 90's skateboard post-ironic, Neutra chambray four loko organic. Authentic Williamsburg synth pickled mlkshk, meditation irony American Apparel before they sold out migas lumbersexual DIY Bushwick brunch tote bag. Fingerstache flannel occupy tote bag Thundercats Wes Anderson. Slow-carb 3 wolf moon bespoke put a bird on it. Kitsch single-origin coffee four loko street art church-key, pickled four dollar toast messenger bag banh mi. Drinking vinegar VHS Pinterest Truffaut Odd Future retro, Banksy hoodie Schlitz Carles letterpress paleo mlkshk keffiyeh. Sustainable cliche hella brunch deep v Banksy.
+                      Vegan 90's skateboard post-ironic, Neutra chambray four loko 
                     </td>
                   </tr>
                 </table>
@@ -144,7 +79,12 @@
             </div>
           </div>
         </div>
-              <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
       </div>
     </div>
   </div>
+
+<% end %>
+
+</div><!-- row -->
+</section>
