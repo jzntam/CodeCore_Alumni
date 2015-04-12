@@ -13,12 +13,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
 
-# My Gems
+# Our Gems
 gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap-sass', '~> 3.3.4'
 gem 'sass-rails', '~> 5.0'
 gem 'quiet_assets'
 gem 'rails_12factor'
+gem "font-awesome-rails"
 
 group :development do
   gem "interactive_editor"
