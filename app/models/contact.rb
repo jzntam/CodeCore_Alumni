@@ -1,4 +1,5 @@
 class Contact < ActiveRecord::Base
+  validates :user_id, uniqueness: true
   belongs_to :cohort
   belongs_to :user
 
