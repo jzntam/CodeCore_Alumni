@@ -16,7 +16,7 @@ class ContactsController < ApplicationController
     # @cohort = Cohort.find(params[:cohort_id])
     # @contact = Contact.new(contact_params)
     # @contact.cohort = @cohort
-    # @contact.user_id = current_user.id
+    # @contact.user_id = current_user.id => PAULO: contact uses user and not user_id. maybe a mistake?
 
     # uses before action to find a cohort
     # one line solution?
@@ -64,6 +64,7 @@ class ContactsController < ApplicationController
   private
 
   def contact_params
+    # added user to store in user id.
     params.require(:contact).permit(:first_name, :last_name, :email, :phone, :company, :website, :other, :user)
   end
 
