@@ -18,7 +18,7 @@ class ContactsController < ApplicationController
     if @contact.save
       redirect_to cohort_path(@cohort), notice: "Contact Created!"
     else
-      flash[:alert] = "Cannot create empty contact. Please type something."
+      flash[:alert] = "It looks like you already have a profile. Edit or Delete that one."
       redirect_to cohort_path(@cohort)
     end
     # render text: params
