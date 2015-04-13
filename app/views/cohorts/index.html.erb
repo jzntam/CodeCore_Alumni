@@ -1,26 +1,31 @@
-<h1>Cohorts#index</h1>
-<p>Find me in app/views/cohorts/index.html.erb</p>
+<section>
+  <%= link_to "Add Cohort", new_cohort_path, class: "btn btn-cc" %>
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2>Graduated Classes</h2>
+      <hr>
+    </div>
+  </div>
 
-<%= link_to "New Group", new_cohort_path %>
-<br>
-<div>
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <td><h4>BootCamp</h4></td>
-        <td><h4>Details</h4></td>
-        <td><h4>Action</h4></td>
-      </tr>
-    </thead>
-    <tbody>
-      <% @cohorts.each do |cohort| %>
+  <div>
+    <table class="table table-hover">
+      <thead>
         <tr>
-          <td><h4><%= link_to cohort.title, cohort_path(cohort) %></h4></td>
-          <td><%= cohort.details %></td>
-          <td><%= link_to "Edit", edit_cohort_path(cohort) %></td>
-          <td><%= link_to "Delete", cohort_path(cohort), method: :delete %></td>
+          <td><h4>BootCamp</h4></td>
+          <td><h4>Details</h4></td>
+          <td><h4>Action</h4></td>
         </tr>
-      <% end %>
-    </tbody>
-  </table>
-</div>
+      </thead>
+      <tbody>
+        <% @cohorts.each do |cohort| %>
+          <tr>
+            <td><h4><%= link_to cohort.title, cohort_path(cohort) %></h4></td>
+            <td><%= cohort.details %></td>
+            <td><%= link_to "Edit", edit_cohort_path(cohort) %></td>
+            <td><%= link_to "Delete", cohort_path(cohort), method: :delete %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</section>
