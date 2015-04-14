@@ -1,3 +1,11 @@
-// Place all the styles related to the cohorts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.btn-cc {
+  border-radius: 0px;
+  background-color: #CB0D0F;
+  border: 1px solid #78000B;
+  color: white;
+}
+
+.btn-cc:hover {
+  background-color: #A20817;
+  color: white;
+}

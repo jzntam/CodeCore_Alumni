@@ -1,17 +1,14 @@
-<h1>Cohorts#show</h1>
-<p>Find me in app/views/cohorts/show.html.erb</p>
-
-<%= link_to "Create New Contact", new_cohort_contact_path(@cohort) %>
-
-<% @cohort.contacts.each do |contact| %>
-  <div class="bg-info">
-    <p><%= contact.first_name %></p>
-    <p><%= contact.last_name %></p>
-    <p><%= contact.email %></p>
-    <p><%= contact.company %></p>
-    <p><%= contact.website %></p>
-    <p><%= contact.other %></p>
-    <p><%= link_to "Edit", edit_cohort_contact_path(@cohort, contact) %></p>
-    <p><%= link_to "Delete", cohort_contact_path(@cohort, contact), method: :delete %></p>
+<%= link_to "Create A New Profile", new_cohort_contact_path(@cohort), class: "btn btn-cc bump-down" %>
+<section id="profile">
+  <div class="row">
+    <div class="col-lg-12 text-center">
+      <h2>Alumni</h2>
+      <hr>
+    </div>
   </div>
-<% end %>
+  <div class="row">
+    <% @cohort.contacts.each do |contact| %>
+      <%= render partial: "contacts/contact", :locals => { :contact => contact } %>
+    <% end %> <!-- @cohort.contacts loop end -->
+  </div><!-- row -->
+</section>

@@ -1,0 +1,66 @@
+<div class="col-sm-4 profile-item">
+  <a href="#profileModal_<%= dom_id(contact) %>" class="profile-link" data-toggle="modal">
+    <div class="caption">
+      <div class="caption-content">
+        <i class="fa fa-search-plus fa-3x"></i>
+      </div>
+    </div>
+    <img src="http://fillmurray.com/360/250" class="img-responsive" alt="">
+  </a>
+</div>
+
+<!-- Profile Modal -->
+<div id="profileModal_<%= dom_id(contact) %>" class="profile-modal modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-content">
+    <div class="close-modal" data-dismiss="modal">
+     <a id="menu-close" href="#" class="btn btn-light btn-xs pull-right toggle"><i class="fa fa-times fa-4x"></i></a>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-10 col-lg-offset-1">
+          <div class="modal-body col-md-12">
+            <h2><%= contact.full_name %></h2>
+            <hr>
+            <div class="col-md-4">
+              <img src="http://fillmurray.com/325/400" class="img-responsive img-centered" alt="">
+            </div>
+            <div class="col-md-8">
+              <table class="up-close">
+                <tr>
+                  <td><h4>Name: </h4></td>
+                  <td><%= contact.full_name %></td>
+                </tr>
+                <tr>
+                  <td><h4>Company: </h4></td>
+                  <td><%= contact.company %></td>
+                </tr>
+                <tr>
+                  <td><h4>Position: </h4></td>
+                  <td><%= Faker::Name.title %></td>
+                </tr>
+                <tr>
+                  <td><h4>Project:</h4></td>
+                  <td><a href="pickyeatr.herokuapp.com"><%= contact.company %></a></td>
+                </tr>
+                <tr>
+                  <td><h4>Profile:</h4></td>
+                  <td>
+                    <%= Faker::Lorem.paragraph(8, true) %> 
+                  </td>
+                </tr>
+              </table>
+              <ul class="list-inline item-details">
+                <li><strong>Phone: </strong><%= Faker::PhoneNumber.phone_number %></li>
+                <li><strong>Email: </strong><%= contact.first_name.downcase %>@<%= contact.full_name.gsub(' ','').downcase %>.com</li>
+                <li><strong>Website: </strong>www.<%= contact.full_name.gsub(' ','').downcase %>.com</li>
+                <li><strong>GitHub: </strong>@<%= Faker::Internet.user_name  %></li>
+                <li><strong>LinkedIn: </strong>@<%= Faker::Internet.user_name  %></li>
+              </ul>
+            </div>
+          </div><!-- modal body -->
+        </div>
+      </div><!-- row -->
+      <button type="button" class="btn btn-default" data-dismiss="modal"><i class="fa fa-times"></i> Close</button>
+    </div> <!-- container -->
+  </div> <!-- modal content -->
+</div> <!-- #profileModal_... -->

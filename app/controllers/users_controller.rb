@@ -1,8 +1,9 @@
 class UsersController < ApplicationController
 
-  def new
-    @user = User.new
-  end
+  # Moved to Cohorts index
+  # def new
+  #   @user = User.new
+  # end
 
   def create
     @user = User.new(user_params)
@@ -11,7 +12,7 @@ class UsersController < ApplicationController
       redirect_to cohorts_path, notice: "Successfully Registered"
     else
       flash[:alert] = "Error creating account, please try again."
-      render "new"
+      render :new
     end
   end
 
