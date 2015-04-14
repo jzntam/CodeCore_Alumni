@@ -1,14 +1,13 @@
 class CohortsController < ApplicationController
   before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
   before_action :new_user, only: [:index, :show]
-  before_action :find_cohort, only: [:show]
+
+  # PAULO: this method can be used in a lot of methods so I'm just going to update it
+  # before_action :find_cohort, only: [:show]
+  before_action :find_cohort, only: [:show, :edit, :update, :destroy]
   
   def index
     @cohorts = Cohort.all
-  end
-
-  def show
-    @cohort = Cohort.find(params[:id])
   end
 
   def new
@@ -25,13 +24,20 @@ class CohortsController < ApplicationController
       # render :new
     end
   end
+  
+  def show
+    # using before action
+    # @cohort = Cohort.find(params[:id])
+  end
 
   def edit
-    @cohort = Cohort.find(params[:id])
+    # Using before action
+    # @cohort = Cohort.find(params[:id])
   end
 
   def update
-    @cohort = Cohort.find(params[:id])
+    # using before action
+    # @cohort = Cohort.find(params[:id])
     if @cohort.update(cohort_params)
       redirect_to root_path, notice: "Alumni Group Updated"
     else
@@ -41,7 +47,8 @@ class CohortsController < ApplicationController
   end
 
   def destroy
-    @cohort = Cohort.find(params[:id])
+    # using before action
+    # @cohort = Cohort.find(params[:id])
     if @cohort.destroy
       redirect_to root_path, notice: "Alumni Group Deleted"
     else
