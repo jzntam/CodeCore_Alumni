@@ -9,16 +9,17 @@
 <div class="form-group well">
   <%= form_for(@cohort, class: "form-horizontal") do |f| %>
     <div class="control-group">
-      <%= f.label :title %>
-      <%= f.text_field :title, class: "form-control input-lg" %>
-    </div>
-    <div class="control-group">
-      <%= f.label :details %>
-      <%= f.text_field :details, class: "form-control input-lg" %>
+      <%#= f.label :title %>
+      <%= f.text_field :title, placeholder: "Title", class: "form-control input-lg" %>
     </div>
     <br>
     <div class="control-group">
-      <%= f.submit "Create Cohort", class: "btn btn-default" %>
+      <%#= f.label :details %>
+      <%= f.text_field :details, placeholder: "Details", class: "form-control input-lg" %>
+    </div>
+    <br>
+    <div class="control-group">
+      <%= f.submit "Create Cohort", class: "form-control btn btn-cc" %>
     </div>
   <% end %>
 </div>
