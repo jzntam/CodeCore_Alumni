@@ -1,5 +1,6 @@
 <div class="contact-form-container well col-md-12">
-  <h2>Create / Edit Contact</h2>
+  <h2>Create Contact</h2>
+  <hr class="thick">
   <%= form_for @contact, url: cohort_contacts_path(@cohort) do |f| %>
     <% if @contact.errors.any? %>
       <div class="error_messages">

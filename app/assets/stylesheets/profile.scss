@@ -9,6 +9,9 @@
 section {
   padding: 50px 0;
 }
+section#profile {
+  padding-top: 25px;
+}
 
 section h2 {
   margin: 0;
@@ -114,7 +117,7 @@ table.up-close {
 }
 
 .profile-modal .modal-content img {
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .profile-modal .modal-content .item-details {
@@ -173,5 +176,12 @@ table.up-close {
     background-color: #fe001a;
     color: white;
     transition: all 0.4s ease 0s;
+  }
+}
+
+.profile-buttons {
+  text-align: left;
+  .btn {
+    border-radius: 0;
   }
 }

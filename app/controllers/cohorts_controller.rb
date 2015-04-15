@@ -1,5 +1,5 @@
 class CohortsController < ApplicationController
-  before_filter :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
   before_action :new_user, only: [:index, :show]
 
   # PAULO: this method can be used in a lot of methods so I'm just going to update it

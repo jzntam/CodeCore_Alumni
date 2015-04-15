@@ -1,8 +1,8 @@
 <div class="user-container">
-  <h1>Sign Up</h1>
+  <h2>Sign Up</h2>
   <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
-      <div class="error_messages">
+      <div class="error_messages alert alert-danger">
         <h2>Form is invalid</h2>
         <ul>
           <% @user.errors.full_messages.each do |message| %>

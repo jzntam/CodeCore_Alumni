@@ -1,11 +1,10 @@
-// Place all the styles related to the contacts controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
 .contact-form-container {
   // width: 500px;
   position: relative;
   margin: 0 auto;
+  margin-top: 30px;
   h2 {
+    margin: 0px;
     text-align: center;
   }
   .form-control {
@@ -16,4 +15,10 @@
     padding-top: 4px;
     font-size: 18px;
   }
+}
+
+hr.thick {
+  border-color: #CB0D0F;
+  margin-top: 10px;
+  width: 60%;
 }
