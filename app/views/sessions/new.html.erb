@@ -1,7 +1,4 @@
 <div class="user-container">
-  <h1>Sessions#new</h1>
-  <p>Find me in app/views/sessions/new.html.erb</p>
-
   <h2>Log In</h2>
   <%= form_for (@user || @user = User.new), url: sessions_path, method: :post do |f| %>
     <div class="form-group">
