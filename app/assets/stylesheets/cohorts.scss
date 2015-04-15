@@ -1,11 +1,35 @@
 .btn-cc {
   border-radius: 0px;
   background-color: #CB0D0F;
-  border: 1px solid #78000B;
+  border: 1px solid #93000E;
   color: white;
 }
 
 .btn-cc:hover {
   background-color: #A20817;
   color: white;
+}
+
+.form-container {
+  width: 500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  h2 {
+    text-align: center;
+  }
+  .form-control {
+    border-radius: 5px;
+  }
+  .btn {
+    height: 40px;
+    padding-top: 4px;
+    font-size: 18px;
+  }
+}
+table.table-hover{
+  td {
+    vertical-align: middle !important;
+  }
 }
