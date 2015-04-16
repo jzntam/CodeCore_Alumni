@@ -36,7 +36,7 @@ RSpec.describe SessionsController, type: :controller do
 
       it "redirect to home page" do
         valid_request
-        expect(response).to redirect_to( root_path )
+        expect(response).to redirect_to( cohorts_path )
       end
 
       it "sets a flash message" do
@@ -82,7 +82,7 @@ RSpec.describe SessionsController, type: :controller do
     end
 
     it "redirects to home page" do
-      expect(response).to redirect_to(root_path)
+      expect(response).to redirect_to(cohorts_path)
     end
 
     it "has a flash notice" do
