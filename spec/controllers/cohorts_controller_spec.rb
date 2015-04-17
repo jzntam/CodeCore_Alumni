@@ -23,6 +23,7 @@ RSpec.describe CohortsController, type: :controller do
   end
 
   describe "GET #show" do
+    before {login(user)}
     it "returns http success" do
       get :show, id: cohort.id
       expect(response).to have_http_status(:success)
@@ -108,15 +109,16 @@ RSpec.describe CohortsController, type: :controller do
   end
 
   describe "GET #update" do
+    before {login(user)}
     before {patch :update, id: cohort.id, cohort: {title: "edited title"}}
     it "returns http redirect" do # when cohort is updated, it redirects to root path
-      login(user)
+      # login(user)
       expect(response).to have_http_status(:redirect)
     end
 
     it "redirects to cohort root path" do
       login(user)
-      expect(response).to redirect_to( root_path )
+      expect(response).to redirect_to( cohorts_path )
     end
   end
 
@@ -132,7 +134,7 @@ RSpec.describe CohortsController, type: :controller do
 
     it "redirects to root path" do
       valid_request
-      expect(response).to redirect_to( root_path )
+      expect(response).to redirect_to( cohorts_path )
     end
 
     it "deletes the cohort in the database" do
