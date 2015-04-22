@@ -1,3 +1,6 @@
+// Styles for the Show All Contact Page and Modal
+// views/
+
 .img-centered {
   margin: 0 auto;
 }
@@ -183,5 +186,8 @@ table.up-close {
   text-align: left;
   .btn {
     border-radius: 0;
+  }
+  a {
+    text-decoration: none;
   }
 }
