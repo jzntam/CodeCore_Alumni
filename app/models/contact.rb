@@ -3,11 +3,23 @@ class Contact < ActiveRecord::Base
   belongs_to :cohort
   belongs_to :user
 
+  def first_name
+    user.first_name if user
+  end
+
+  def last_name
+    user.last_name if user
+  end
+
+  def email
+    user.email if user
+  end
+
   def full_name
-    if first_name || last_name
-      "#{first_name} #{last_name}"
+    if user.first_name || user.last_name
+      "#{user.first_name} #{user.last_name}"
     else
-      email
+      user.email
     end
   end
   
