@@ -24,7 +24,7 @@
             <div class="col-md-4">
               <img src="http://fillmurray.com/325/400" class="img-responsive img-centered" alt="">
               <!-- Edit and Delete Buttons -->
-              <% if contact.user_id == current_user.id %>
+              <% if contact.user_id == current_user %>
                 <div class="profile-buttons">
                   <%= link_to(edit_cohort_contact_path(@cohort, contact)) do %>
                   <button type="button" class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i> Edit</button>
@@ -47,25 +47,25 @@
                 </tr>
                 <tr>
                   <td><h4>Position: </h4></td>
-                  <td><%= Faker::Name.title %></td>
+                  <td><%= contact.position %></td>
                 </tr>
                 <tr>
                   <td><h4>Project:</h4></td>
-                  <td><a href="pickyeatr.herokuapp.com"><%= contact.company %></a></td>
+                  <td><%= contact.project %></td>
                 </tr>
                 <tr>
                   <td><h4>Profile:</h4></td>
                   <td>
-                    <%= Faker::Lorem.paragraph(8, true) %> 
+                    <%= contact.other %> 
                   </td>
                 </tr>
               </table>
               <ul class="list-inline item-details">
-                <li><strong>Phone: </strong><%= Faker::PhoneNumber.phone_number %></li>
-                <li><strong>Email: </strong><%= contact.first_name.downcase %>@<%= contact.full_name.gsub(' ','').downcase %>.com</li>
-                <li><strong>Website: </strong>www.<%= contact.full_name.gsub(' ','').downcase %>.com</li>
-                <li><strong>GitHub: </strong>@<%= Faker::Internet.user_name  %></li>
-                <li><strong>LinkedIn: </strong>@<%= Faker::Internet.user_name  %></li>
+                <li><strong>Phone: </strong><%= contact.phone %></li>
+                <li><strong>Email: </strong><%= contact.user.email %></li>
+                <li><strong>Website: </strong><%= contact.website %></li>
+                <li><strong>GitHub: </strong><%= contact.github %></li>
+                <li><strong>LinkedIn: </strong><%= contact.linkedin %></li>
               </ul>
             </div>
           </div><!-- modal body -->
