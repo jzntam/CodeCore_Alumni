@@ -1,5 +1,8 @@
+// This is the BASE Stylesheet
+// All global styles go here
+
 .btn-cc {
-  border-radius: 0px;
+  border-radius: 0px !important;
   background-color: #CB0D0F;
   border: 1px solid #93000E;
   color: white;
@@ -33,3 +36,4 @@ table.table-hover{
     vertical-align: middle !important;
   }
 }
+

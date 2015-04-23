@@ -6,7 +6,7 @@ namespace :fake_data do
 
     6.times { |x| Cohort.create(title: "Cohort #{x + 1}", details: Faker::Hacker.say_something_smart)}
 
-    User.all.each { |u| u.contacts.create(first_name: Faker::Name.first_name, last_name: Faker::Name.last_name, email: Faker::Internet.user_name + "@email.com", phone: Faker::PhoneNumber.phone_number, company: Faker::Company.name, website: Faker::Internet.url, other: Faker::Lorem.paragraph(8, true), user_id: u.id, cohort_id: ((Cohort.all.map).each { |x| x.id}).sample)}
+    User.all.each { |u| u.contacts.create(phone: Faker::PhoneNumber.phone_number, company: Faker::Company.name, website: Faker::Internet.url, other: Faker::Lorem.paragraph(8, true), position: Faker::Name.title, project: Faker::Internet.url, github: "@" +  Faker::Internet.user_name, linkedin: "@" + Faker::Internet.user_name, user_id: u.id, cohort_id: ((Cohort.all.map).each { |x| x.id}).sample) }
   end
 
 end
