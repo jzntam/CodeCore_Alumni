@@ -11,6 +11,10 @@
   border-radius: 0;
 }
 
+.form-group .form-control {
+  border-radius: 0;
+}
+
 .icon-addon {
   position: relative;
   color: #555;
@@ -89,4 +93,15 @@
 .form-control:focus {
   border-color: #CB0D0F;
   box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075), 0 0 8px rgba(255, 0, 0, 0.6);
+}
+
+.fa-input {
+  font-size: 20px;
+}
+
+span.input-group-addon {
+  min-width: 50px;
+  color: white;
+  background-color: #888888;
+  border-color: #888888;
 }

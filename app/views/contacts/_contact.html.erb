@@ -24,7 +24,7 @@
             <div class="col-md-4">
               <img src="http://fillmurray.com/325/400" class="img-responsive img-centered" alt="">
               <!-- Edit and Delete Buttons -->
-              <% if contact.user_id == current_user %>
+              <% if contact.user_id == current_user.id %>
                 <div class="profile-buttons">
                   <%= link_to(edit_cohort_contact_path(@cohort, contact)) do %>
                   <button type="button" class="btn btn-success btn-xs"><i class="fa fa-check-square-o"></i> Edit</button>

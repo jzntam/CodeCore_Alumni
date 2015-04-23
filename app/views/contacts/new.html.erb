@@ -14,18 +14,6 @@
     <% end %>
     <div class="col-md-6">
       <div class="control-group">
-        <%#= f.label :first_name %>
-        <%= f.text_field :first_name, name: "user[first_name]",  placeholder: "First Name", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%#= f.label :last_name %>
-        <%= f.text_field :last_name, name: "user[last_name]", placeholder: "Last Name", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%#= f.label :email %>
-        <%= f.text_field :email, name: "user[email]", placeholder: "Email", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
         <%#= f.label :phone %>
         <%= f.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
       </div><br>
@@ -33,8 +21,6 @@
         <%#= f.label :website %>
         <%= f.text_field :website, placeholder: "Personal Website", class: "form-control" %>
       </div><br>
-    </div>
-    <div class="col-md-6">
       <div class="control-group">
         <%#= f.label :company %>
         <%= f.text_field :company, placeholder: "Company", class: "form-control" %>
@@ -42,6 +28,8 @@
       <div class="control-group">
         <%= f.text_field :position, placeholder: "Position", class: "form-control" %>
       </div><br>
+    </div>
+    <div class="col-md-6">
       <div class="control-group">
         <%= f.text_field :project, placeholder: "Project", class: "form-control" %>
       </div><br>

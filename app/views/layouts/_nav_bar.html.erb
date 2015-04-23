@@ -32,7 +32,7 @@
       </ul>
 
       <ul class="nav navbar-nav navbar-right">
-        <% if current_user %>
+        <% if user_signed_in? %>
           <li><a>Hello <%= current_user.first_name %></a></li>
           <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
         <% else %>
