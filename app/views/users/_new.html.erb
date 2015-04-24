@@ -8,7 +8,8 @@
       <div class="modal-body">
         <%= form_for (@user || User.new) do |f| %>
           <% if @user.errors.any? %>
-            <div class="error_messages">
+            <div class="error_messages alert alert-danger alert-dismissable">
+              <button class="close" data-dismiss="alert">×</button>
               <h2>Form is invalid</h2>
               <ul>
                 <% @user.errors.full_messages.each do |message| %>
@@ -38,7 +39,7 @@
             <%= f.password_field :password_confirmation, class: "form-control" %>
           </div>
           <div class="form-group">
-            <%= f.submit "Sign Up", class: "btn btn-primary" %>
+            <%= f.submit "Sign Up", class: "btn btn-cc" %>
           </div>
         <% end %>
       </div>
