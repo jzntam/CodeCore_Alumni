@@ -1,8 +1,9 @@
-<div class="user-container">
+<div class="user-container well">
   <h2>Sign Up</h2>
   <%= form_for @user do |f| %>
     <% if @user.errors.any? %>
-      <div class="error_messages alert alert-danger">
+      <div class="alert alert-danger alert-dismissable">
+        <button class="close" data-dismiss="alert">×</button>
         <h2>Form is invalid</h2>
         <ul>
           <% @user.errors.full_messages.each do |message| %>
@@ -12,27 +13,52 @@
       </div>
     <% end %>
     <div class="form-group">
-      <%= f.label :first_name %>
-      <%= f.text_field :first_name, class: "form-control" %>
+      <%#= f.label :first_name %>
+      <div class="input-group input-group-md">
+        <span class="input-group-addon"><i class="fa fa-user fa-input"></i></span>
+        <div class="icon-addon addon-md">
+          <%= f.text_field :first_name, placeholder: "First Name", class: "form-control" %>
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :last_name %>
-      <%= f.text_field :last_name, class: "form-control" %>
+      <%#= f.label :last_name %>
+      <div class="input-group input-group-md">
+        <span class="input-group-addon"><i class="fa fa-user-plus fa-input"></i></span>
+        <div class="icon-addon addon-md">
+          <%= f.text_field :last_name, placeholder: "Last Name", class: "form-control" %>
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :email %>
-      <%= f.text_field :email, class: "form-control" %>
+      <%#= f.label :email %>
+      <div class="input-group input-group-md">
+        <span class="input-group-addon"><i class="fa fa-envelope fa-input"></i></span>
+        <div class="icon-addon addon-md">
+          <%= f.text_field :email, placeholder: "Email", class: "form-control" %>
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :password %>
-      <%= f.password_field :password, class: "form-control" %>
+      <%#= f.label :password %>
+      <div class="input-group input-group-md">
+        <span class="input-group-addon"><i class="fa fa-unlock-alt fa-input"></i></span>
+        <div class="icon-addon addon-md">
+          <%= f.password_field :password, placeholder: "Password", class: "form-control" %>
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation, class: "form-control" %>
+      <%#= f.label :password_confirmation %>
+      <div class="input-group input-group-md">
+        <span class="input-group-addon"><i class="fa fa-lock fa-input"></i></span>
+        <div class="icon-addon addon-md">
+          <%= f.password_field :password_confirmation, placeholder: "Password Confirmation", class: "form-control" %>
+        </div>
+      </div>
     </div>
     <div class="form-group">
-      <%= f.submit "Sign Up", class: "btn btn-primary" %>
+      <%= f.submit "Sign Up", class: "btn btn-cc" %>
     </div>
   <% end %>
 </div>
