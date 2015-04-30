@@ -13,36 +13,75 @@
       </div>
     <% end %>
     <div class="col-md-6">
-      <div class="control-group">
-        <%#= f.label :phone %>
-        <%= f.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%#= f.label :website %>
-        <%= f.text_field :website, placeholder: "Personal Website", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%#= f.label :company %>
-        <%= f.text_field :company, placeholder: "Company", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%= f.text_field :position, placeholder: "Position", class: "form-control" %>
-      </div><br>
+      <div class="form-group">
+        <%= f.label :phone %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-phone fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :phone, placeholder: "Phone Number", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :website %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-laptop fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :website, placeholder: "Personal Website", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :company %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-briefcase fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :company, placeholder: "Company", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :position %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-user fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :position, placeholder: "Position", class: "form-control" %>
+          </div>
+        </div>
+      </div>
     </div>
     <div class="col-md-6">
-      <div class="control-group">
-        <%= f.text_field :project, placeholder: "Project", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%= f.text_field :github, placeholder: "GitHub", class: "form-control" %>
-      </div><br>
-      <div class="control-group">
-        <%= f.text_field :linkedin, placeholder: "LinkedIn", class: "form-control" %>
+      <div class="form-group">
+        <%= f.label :project, "Final Project" %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-code fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :project, placeholder: "Project", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :github, "GitHub" %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-github fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :github, placeholder: "GitHub", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="form-group">
+        <%= f.label :linkedin, "LinkedIn" %>
+        <div class="input-group input-group-md">
+          <span class="input-group-addon"><i class="fa fa-linkedin-square fa-input"></i></span>
+          <div class="icon-addon addon-md">
+            <%= f.text_field :linkedin, placeholder: "LinkedIn", class: "form-control" %>
+          </div>
+        </div>
       </div>
     </div>
     <div class="col-md-12">
-      <div class="control-group">
-        <%#= f.label :other %><br>
+      <div class="form-group">
+        <%= f.label :other, "Profile Information" %><br>
         <%= f.text_area :other, placeholder: "Profile", rows: "4", class: "form-control" %>
       </div><br>
     </div>

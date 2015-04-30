@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AlumniList</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+
+    <%= render 'layouts/nav_bar' %>
+
+    <div style="height:100px"></div>
+
+    <div class="flash-container">
+      <% if flash[:notice] %>
+        <div class="alert alert-success alert-dismissable">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= flash[:notice] %>
+        </div>
+      <% elsif flash[:alert] %>
+        <div class="alert alert-danger alert-dismissable">
+          <button class="close" data-dismiss="alert">×</button>
+          <%= flash[:alert] %>
+        </div>
+      <% end %>
+    </div>
+
+    <div class="container">
+      <%= yield %>
+    </div>
+  </body>
+</html>
