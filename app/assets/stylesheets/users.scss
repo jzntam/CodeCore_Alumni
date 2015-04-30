@@ -32,6 +32,14 @@
   padding: 20px;
 }
 
+.flash-container {
+  max-width: 500px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0px;
+  margin-bottom: 0px;
+}
+
 @media(max-width:515px) {
   .login-container {
     width: 95%;
