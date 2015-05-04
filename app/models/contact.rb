@@ -18,8 +18,6 @@ class Contact < ActiveRecord::Base
   def full_name
     if User.find(user_id).first_name || User.find(user_id).last_name
       "#{User.find(user_id).first_name} #{User.find(user_id).last_name}"
-    else
-      user.email
     end
   end
   
