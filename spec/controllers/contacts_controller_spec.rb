@@ -30,8 +30,7 @@ RSpec.describe ContactsController, type: :controller do
   describe "POST #create" do
     before {login(user)}
     it "returns http found" do
-      post :create, cohort_id: cohort.id, contact: {first_name: "John"}
-      expect(response).to have_http_status(:found)
+      post :create, cohort_id: cohort.id, contact: {phone: "604 333 3333" }
       expect(response).to redirect_to(cohort_path(cohort)) 
     end
   end

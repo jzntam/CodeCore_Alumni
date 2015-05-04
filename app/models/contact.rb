@@ -4,20 +4,20 @@ class Contact < ActiveRecord::Base
   belongs_to :user
 
   def first_name
-    user.first_name if user
+    User.find(user_id).first_name if User.find(user_id)
   end
 
   def last_name
-    user.last_name if user
+    User.find(user_id).last_name if User.find(user_id)
   end
 
   def email
-    user.email if user
+    User.find(user_id).email if User.find(user_id)
   end
 
   def full_name
-    if user.first_name || user.last_name
-      "#{user.first_name} #{user.last_name}"
+    if User.find(user_id).first_name || User.find(user_id).last_name
+      "#{User.find(user_id).first_name} #{User.find(user_id).last_name}"
     else
       user.email
     end
