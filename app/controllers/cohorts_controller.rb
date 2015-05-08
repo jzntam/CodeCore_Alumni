@@ -8,6 +8,7 @@ class CohortsController < ApplicationController
   
   def index
     @cohorts = Cohort.all
+    @cohort = Cohort.new
   end
 
   def new
@@ -19,7 +20,7 @@ class CohortsController < ApplicationController
     if @cohort.save
       redirect_to cohorts_path, notice: "Alumni Group Successfully Created"
     else
-      flash[:alert] = "Problem"
+      flash[:alert] = "\"#{@cohort.errors.full_messages.join(' & ')}\". Unable to create, please try again."
       redirect_to cohorts_path
       # render :new
     end

@@ -1,0 +1,6 @@
+          <tr>
+            <td><h4><%= link_to cohort.title, cohort_path(cohort) %></h4></td>
+            <td><%= cohort.details %></td>
+            <td><%= link_to "Edit", edit_cohort_path(cohort) %></td>
+            <td><%= link_to "Delete", cohort_path(cohort), method: :delete %></td>
+          </tr>

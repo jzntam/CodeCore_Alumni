@@ -36,4 +36,16 @@ table.table-hover{
     vertical-align: middle !important;
   }
 }
+#newCohortModal {
+  div.modal-header {
+    border: 0;
+    padding-bottom: 0;
+  }
+}
+
+#cohortModalLabel {
+    margin-top: 0px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #CB0D0F;
+  }
 
