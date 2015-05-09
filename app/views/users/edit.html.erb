@@ -61,4 +61,6 @@
       <%= f.submit "Update", class: "btn btn-cc" %>
     </div>
   <% end %>
+  <hr class="thicker">
+  <%= link_to "Delete Account", user_path(@user), method: :delete, class: "btn btn-warning", data: {confirm: "You have requested to delete your account. Are you sure you want to proceed?"} %>
 </div>

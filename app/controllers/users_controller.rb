@@ -30,6 +30,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def destroy
+    @user = User.find(params[:id])
+    if @user == current_user
+      session[:user_id] = nil
+      if @user.destroy
+        redirect_to cohorts_path, notice: "Sorry to see you go... Account Deleted."
+      else
+        flash[:alert] = "Unable to Delete, please try again."
+        render :edit
+      end
+    else
+      flash[:alert] = "Cannot Delete an account that is not yours."
+      redirect_to cohorts_path
+    end
+  end
+
   private
 
   def user_params
