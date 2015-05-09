@@ -36,16 +36,16 @@ table.table-hover{
     vertical-align: middle !important;
   }
 }
-#newCohortModal {
+#newCohortModal, #signUpModal, #signInModal {
   div.modal-header {
     border: 0;
     padding-bottom: 0;
   }
 }
 
-#cohortModalLabel {
+#cohortModalLabel, #signUpModalLabel, #logInModalLabel {
     margin-top: 0px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #CB0D0F;
+    border-bottom: 2px solid #CB0D0F;
   }
 
