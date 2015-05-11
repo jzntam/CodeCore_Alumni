@@ -9,5 +9,6 @@ Rails.application.routes.draw do
     resources :contacts
   end
 
+  match "/auth/:provider/callback" => "sessions#slack", :via => [:get, :post]
 
 end

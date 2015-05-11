@@ -20,6 +20,7 @@ gem 'sass-rails', '~> 5.0'
 gem 'quiet_assets'
 gem 'rails_12factor'
 gem "font-awesome-rails"
+gem 'omniauth-slack', '~> 1.0.1'
 
 group :development do
   gem "interactive_editor"
