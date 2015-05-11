@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true, uniqueness: true
   validates :password_digest, length: { minimum: 6},  confirmation: true, on: :create
 
-  has_many :contacts, dependent: :nullify
+  has_many :contacts, dependent: :destroy
 
   def self.create_with_omniauth(auth)
     create! do |user|
